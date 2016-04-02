@@ -14,6 +14,8 @@
 		A4BEF3961CAF13DC00A146EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4BEF3941CAF13DC00A146EF /* LaunchScreen.storyboard */; };
 		A4BEF3A11CAF13DC00A146EF /* selfTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BEF3A01CAF13DC00A146EF /* selfTests.swift */; };
 		A4BEF3AC1CAF13DC00A146EF /* selfUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BEF3AB1CAF13DC00A146EF /* selfUITests.swift */; };
+		A4BEF3BA1CAF2B8C00A146EF /* splash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A4BEF3B91CAF2B8C00A146EF /* splash.jpg */; };
+		A4BEF3BC1CAFBE9D00A146EF /* mustache-1.png in Resources */ = {isa = PBXBuildFile; fileRef = A4BEF3BB1CAFBE9D00A146EF /* mustache-1.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		A4BEF3A71CAF13DC00A146EF /* selfUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = selfUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4BEF3AB1CAF13DC00A146EF /* selfUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selfUITests.swift; sourceTree = "<group>"; };
 		A4BEF3AD1CAF13DC00A146EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4BEF3B91CAF2B8C00A146EF /* splash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = splash.jpg; sourceTree = "<group>"; };
+		A4BEF3BB1CAFBE9D00A146EF /* mustache-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mustache-1.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,8 @@
 		A4BEF38A1CAF13DC00A146EF /* self */ = {
 			isa = PBXGroup;
 			children = (
+				A4BEF3B91CAF2B8C00A146EF /* splash.jpg */,
+				A4BEF3BB1CAFBE9D00A146EF /* mustache-1.png */,
 				A4BEF38B1CAF13DC00A146EF /* AppDelegate.swift */,
 				A4BEF38D1CAF13DC00A146EF /* ViewController.swift */,
 				A4BEF38F1CAF13DC00A146EF /* Main.storyboard */,
@@ -232,8 +238,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4BEF3BA1CAF2B8C00A146EF /* splash.jpg in Resources */,
 				A4BEF3961CAF13DC00A146EF /* LaunchScreen.storyboard in Resources */,
 				A4BEF3931CAF13DC00A146EF /* Assets.xcassets in Resources */,
+				A4BEF3BC1CAFBE9D00A146EF /* mustache-1.png in Resources */,
 				A4BEF3911CAF13DC00A146EF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -485,6 +493,7 @@
 				A4BEF3B21CAF13DC00A146EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A4BEF3B31CAF13DC00A146EF /* Build configuration list for PBXNativeTarget "selfTests" */ = {
 			isa = XCConfigurationList;
@@ -493,6 +502,7 @@
 				A4BEF3B51CAF13DC00A146EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A4BEF3B61CAF13DC00A146EF /* Build configuration list for PBXNativeTarget "selfUITests" */ = {
 			isa = XCConfigurationList;
@@ -501,6 +511,7 @@
 				A4BEF3B81CAF13DC00A146EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
