@@ -17,44 +17,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="splash.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="kFc-Yl-SpO">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="splash.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="7ZR-Xb-AXV">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="NDi-ax-kIV" appends="YES" id="1VT-dL-DI7"/>
-                                </connections>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mustache-1.png" translatesAutoresizingMaskIntoConstraints="NO" id="oRH-hh-GXj">
                                 <rect key="frame" x="30" y="438" width="314" height="79"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rH9-oD-Gch">
+                                <rect key="frame" x="170" y="619" width="35" height="40"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
+                                <state key="normal" image="delete.png"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q7d-pU-DuU">
+                                <rect key="frame" x="168" y="-2" width="37" height="33"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
+                                <state key="normal" image="save.png"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="down" destination="NDi-ax-kIV" id="ESl-xH-85F"/>
+                        <outlet property="deletIcon" destination="rH9-oD-Gch" id="Ity-Ec-F5u"/>
+                        <outlet property="pan" destination="hGX-mb-oEk" id="tfh-f7-7tY"/>
+                        <outlet property="saveIcon" destination="q7d-pU-DuU" id="SIe-Fa-pOI"/>
                         <outlet property="selfieView" destination="7ZR-Xb-AXV" id="1xE-Rl-MiS"/>
                         <outlet property="test" destination="oRH-hh-GXj" id="cFe-ly-cRy"/>
-                        <outlet property="up" destination="rGE-zR-OXD" id="V1f-qd-bTO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="down" id="NDi-ax-kIV">
+                <panGestureRecognizer minimumNumberOfTouches="1" id="hGX-mb-oEk">
                     <connections>
-                        <action selector="swipeDown:" destination="BYZ-38-t0r" id="y2R-o4-LRy"/>
+                        <action selector="pan:" destination="BYZ-38-t0r" id="l36-Al-13T"/>
                     </connections>
-                </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="up" id="rGE-zR-OXD">
-                    <connections>
-                        <action selector="swipeUp:" destination="BYZ-38-t0r" id="dV4-Nu-WQH"/>
-                    </connections>
-                </swipeGestureRecognizer>
+                </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="244.5" y="349.5"/>
+            <point key="canvasLocation" x="118.5" y="296.5"/>
         </scene>
     </scenes>
     <resources>
+        <image name="delete.png" width="128" height="128"/>
         <image name="mustache-1.png" width="692" height="172"/>
+        <image name="save.png" width="128" height="128"/>
         <image name="splash.jpg" width="1242" height="2208"/>
     </resources>
 </document>

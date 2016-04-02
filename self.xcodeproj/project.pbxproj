@@ -16,6 +16,8 @@
 		A4BEF3AC1CAF13DC00A146EF /* selfUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BEF3AB1CAF13DC00A146EF /* selfUITests.swift */; };
 		A4BEF3BA1CAF2B8C00A146EF /* splash.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A4BEF3B91CAF2B8C00A146EF /* splash.jpg */; };
 		A4BEF3BC1CAFBE9D00A146EF /* mustache-1.png in Resources */ = {isa = PBXBuildFile; fileRef = A4BEF3BB1CAFBE9D00A146EF /* mustache-1.png */; };
+		A4BEF3C21CAFF8C100A146EF /* delete.png in Resources */ = {isa = PBXBuildFile; fileRef = A4BEF3C11CAFF8C100A146EF /* delete.png */; };
+		A4BEF3C41CAFF8CA00A146EF /* save.png in Resources */ = {isa = PBXBuildFile; fileRef = A4BEF3C31CAFF8CA00A146EF /* save.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		A4BEF3AD1CAF13DC00A146EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4BEF3B91CAF2B8C00A146EF /* splash.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = splash.jpg; sourceTree = "<group>"; };
 		A4BEF3BB1CAFBE9D00A146EF /* mustache-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mustache-1.png"; sourceTree = "<group>"; };
+		A4BEF3C11CAFF8C100A146EF /* delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delete.png; sourceTree = "<group>"; };
+		A4BEF3C31CAFF8CA00A146EF /* save.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = save.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,8 @@
 		A4BEF38A1CAF13DC00A146EF /* self */ = {
 			isa = PBXGroup;
 			children = (
+				A4BEF3C11CAFF8C100A146EF /* delete.png */,
+				A4BEF3C31CAFF8CA00A146EF /* save.png */,
 				A4BEF3B91CAF2B8C00A146EF /* splash.jpg */,
 				A4BEF3BB1CAFBE9D00A146EF /* mustache-1.png */,
 				A4BEF38B1CAF13DC00A146EF /* AppDelegate.swift */,
@@ -238,10 +244,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4BEF3C21CAFF8C100A146EF /* delete.png in Resources */,
 				A4BEF3BA1CAF2B8C00A146EF /* splash.jpg in Resources */,
 				A4BEF3961CAF13DC00A146EF /* LaunchScreen.storyboard in Resources */,
 				A4BEF3931CAF13DC00A146EF /* Assets.xcassets in Resources */,
 				A4BEF3BC1CAFBE9D00A146EF /* mustache-1.png in Resources */,
+				A4BEF3C41CAFF8CA00A146EF /* save.png in Resources */,
 				A4BEF3911CAF13DC00A146EF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

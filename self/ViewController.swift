@@ -12,10 +12,13 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
 
     @IBOutlet weak var test: UIImageView!
     @IBOutlet weak var selfieView: UIImageView!
-    @IBOutlet var down: UISwipeGestureRecognizer!
-    @IBOutlet var up: UISwipeGestureRecognizer!
+    @IBOutlet var pan: UIPanGestureRecognizer!
+    @IBOutlet weak var saveIcon: UIButton!
+    @IBOutlet weak var deletIcon: UIButton!
     
+    var image : UIImage? = nil
     var selectImage = true
+    var centery = CGFloat(0)
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
         selfieView.contentMode = .ScaleAspectFill
@@ -28,30 +31,53 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    @IBAction func swipeUp(sender: AnyObject) {
+    @IBAction func pan(sender: AnyObject) {
+        let translation = sender.translationInView(self.view)
+        sender.view!.center = CGPoint(x: sender.view!.center.x, y: sender.view!.center.y + translation.y)
+        sender.setTranslation(CGPointZero, inView: self.view)
+        if(sender.view!.center.y < centery - (UIScreen.mainScreen().bounds.height/2)) {
+            swipeUp(sender)
+        }
         
-        UIGraphicsBeginImageContextWithOptions(selfieView.bounds.size, false, UIScreen.mainScreen().scale)
-        selfieView.drawViewHierarchyInRect(selfieView.bounds, afterScreenUpdates: true)
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-
+        if(sender.view!.center.y > centery + (UIScreen.mainScreen().bounds.height/2)) {
+            swipeDown(sender)
+        }
         
-        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+        if(sender.state == .Ended) {
+            if (self.selfieView.center.y != self.centery) {
+                self.selfieView.center.y = self.centery
+            }
+        }
+    }
+    
+    func swipeUp(sender: AnyObject) {
+        if(self.image != nil) {
+            UIImageWriteToSavedPhotosAlbum(self.image!, nil, nil, nil)
+        }
         showPicker()
     }
     
-    @IBAction func swipeDown(sender: AnyObject) {
-        self.showPicker()
+    func screenShot() {
+        UIGraphicsBeginImageContextWithOptions(selfieView.bounds.size, false, UIScreen.mainScreen().scale)
+        selfieView.drawViewHierarchyInRect(selfieView.bounds, afterScreenUpdates: true)
+        self.image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+    }
+    
+    func swipeDown(sender: AnyObject) {
+       self.showPicker()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        
         test.hidden = true
         self.selfieView.userInteractionEnabled = true
-        self.selfieView.addGestureRecognizer(down)
-        self.selfieView.addGestureRecognizer(up)
+        self.selfieView.addGestureRecognizer(pan)
         self.selfieView.addSubview(test)
-        // Do any additional setup after loading the view, typically from a nib.
+        self.centery = self.selfieView.center.y;
+        
     }
     
     
@@ -74,10 +100,15 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     override func viewDidAppear(animated: Bool) {
         if(selectImage) {
             test.hidden = true
+            saveIcon.hidden = true
+            deletIcon.hidden = true
             showPicker()
             selectImage = false
         } else {
             test.hidden = false
+            screenShot()
+            saveIcon.hidden = false
+            deletIcon.hidden = false
         }
     }
 
@@ -85,7 +116,5 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
 
